@@ -31,7 +31,7 @@ class Bringgster < Formula
     <string>#{plist_name}</string>
     <key>ProgramArguments</key>
     <array>
-      <string>#{bin}/bringgster</string>
+      <string>#{sbin}/bringgster</string>
       <string>minikube</string>
       <string>tunnel</string>
     </array>
