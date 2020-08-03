@@ -8,11 +8,11 @@ class Bringgster < Formula
 
   if OS.mac?
     url "https://github.com/bringg/bringgster/releases/download/v0.2.6/bringgster_0.2.6_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "7011fb8926050d8145c40677051dc66e9c7a2a88efc5d24c8e09f54c88607609"
+    sha256 "32b1b5542d2e191b52b6bc8b4558f3e79c2ceacc5edea3520e60d31679ae4027"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/bringg/bringgster/releases/download/v0.2.6/bringgster_0.2.6_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7785744d019bae05b20b286ab92e814f968b410dfa28c9265aee5fee6c8687af"
+      sha256 "c2e50619743747be6cadabc508b2ec7abb2a63defcdbe3499319bacc18197470"
     end
   end
 
@@ -31,7 +31,7 @@ class Bringgster < Formula
     <string>#{plist_name}</string>
     <key>ProgramArguments</key>
     <array>
-      <string>#{opt_sbin}/bringgster</string>
+      <string>#{bin}/bringgster</string>
       <string>minikube</string>
       <string>tunnel</string>
     </array>
