@@ -39,6 +39,8 @@ class Bringgster < Formula
     <true/>
     <key>KeepAlive</key>
     <true/>
+    <key>UserName</key>
+    <string>#{ENV["USER"]}</string>
   </dict>
 </plist>
 
