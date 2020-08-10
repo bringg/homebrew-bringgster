@@ -8,11 +8,11 @@ class Bringgster < Formula
 
   if OS.mac?
     url "https://github.com/bringg/bringgster/releases/download/v0.3.0-pre/bringgster_0.3.0-pre_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "a77bcfee013a30fcb6cdfcada307bf44f4b578d20071ec165dcb892ad0774010"
+    sha256 "adf2285c4e004aff58de3e2867e028313527c8d89847f54095636eb020538b1d"
   elsif OS.linux?
     if Hardware::CPU.intel?
       url "https://github.com/bringg/bringgster/releases/download/v0.3.0-pre/bringgster_0.3.0-pre_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "00ecd5f07a9da93f8f3db1579aeb20989f675a805cfef1310f62869bb44cccce"
+      sha256 "4e0012629f822a53483ae4e483b28f731808dfdf5f272c685496fadf459813b3"
     end
   end
 
