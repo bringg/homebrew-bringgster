@@ -3,16 +3,16 @@ require_relative "../lib/custom_download_strategy"
 class Bringgster < Formula
   desc ""
   homepage "https://github.com/bringg/bringgster"
-  version "0.4.3-pre"
+  version "0.4.4"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/bringg/bringgster/releases/download/v0.4.3-pre/bringgster_0.4.3-pre_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "ba87a374deca36d87bbd652fa4c65ee6b65e435e274bb50e25ad185514c0eb68"
+    url "https://github.com/bringg/bringgster/releases/download/v0.4.4/bringgster_0.4.4_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+    sha256 "15f023e3de07c54451c6cd1445e9ab042219a3acec149fb6ab155b2a7ca29949"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/bringg/bringgster/releases/download/v0.4.3-pre/bringgster_0.4.3-pre_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "ca54e331b04251559775879af5658f96490c72646ab739d55643e3c13b5e771c"
+      url "https://github.com/bringg/bringgster/releases/download/v0.4.4/bringgster_0.4.4_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "5aa576605e092ce7953b8fc2a762d230778c5f08a9bc82ee16630f76f10c177d"
     end
   end
 
