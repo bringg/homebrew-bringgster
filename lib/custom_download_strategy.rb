@@ -12,9 +12,9 @@ class S3DownloadStrategy < CurlDownloadStrategy
     super
   end
 
-  def _fetch(url:, resolved_url:)
+  def _fetch(url:, resolved_url:, timeout:)
     if url !~ %r{^https?://([^.].*)\.s3\.amazonaws\.com/(.+)$} &&
-        url !~ %r{^s3://([^.].*?)/(.+)$}
+       url !~ %r{^s3://([^.].*?)/(.+)$}
       raise "Bad S3 URL: " + url
     end
 
@@ -68,7 +68,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
 
   private
 
-  def _fetch(url:, resolved_url:)
+  def _fetch(url:, resolved_url:, timeout:)
     curl_download download_url, to: temporary_path
   end
 
@@ -114,15 +114,15 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def download_url
-    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
+    "https://api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
   end
 
   private
 
-  def _fetch(url:, resolved_url:)
+  def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
-    curl_download download_url, "--header", "Accept: application/octet-stream", to: temporary_path
+    curl_download download_url, "--header", "Accept: application/octet-stream", "--header", "Authorization: token #{@github_token}", to: temporary_path
   end
 
   def asset_id
@@ -139,7 +139,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def fetch_release_metadata
     release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    GitHub.open_api(release_url)
+    GitHub::API.open_rest(release_url)
   end
 end
 
