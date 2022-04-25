@@ -10,7 +10,7 @@ class Bringgster < Formula
 
   on_macos do
     url "https://github.com/bringg/bringgster/releases/download/v0.4.9/bringgster_0.4.9_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 "14fc7b21053db440e26c8b1c1dad23a04b4442ca0cfeef93566dc5d204b23468"
+    sha256 "6164f238bd188069f89b1e40e870335f8093ab77fbdc47a404ae8d311c6aefbb"
 
     def install
       bin.install "bringgster"
@@ -30,7 +30,7 @@ class Bringgster < Formula
   on_linux do
     if Hardware::CPU.intel?
       url "https://github.com/bringg/bringgster/releases/download/v0.4.9/bringgster_0.4.9_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "efad31eccaff55c21c5a077531810852f4a7eec56cd773e2c4ff05239ce1cd05"
+      sha256 "a1797d51094660915567e764600193b56e895eb136191e0aa36e3caf623a5e88"
 
       def install
         bin.install "bringgster"
